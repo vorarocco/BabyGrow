@@ -1,0 +1,54 @@
+<img src="/img/sleep1.jpg" class="img-fluid" alt="...">
+
+<div style="text-align: center;">
+  <img style="width: 600px;" class="img-fluid" src="/img/sleepinglogo.jpg" alt="...">
+</div>
+
+<!-- <h1 style="margin: 0% 10% 0% 10% ;">Create New Sleep</h1> -->
+
+<div style="margin: 2% 10% 20% 10% ;">
+    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group me-2" role="group" aria-label="First group">
+    
+      
+            <a href="/sleep/newsleep">
+                <button type="button" class="btn btn-outline-secondary">Create New Sleep</button>
+            </a>
+            
+        </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Time Start</th>
+      <th scope="col">Time End</th>
+      <th scope="col">Baby</th>
+    </tr>
+  </thead>
+
+    <% sleeps.forEach((sleep,id)=>{ %>
+  <tbody>
+    <tr>
+      <td><%=sleep.date%></td>
+      <td><%=sleep.timeStart%></td>
+      <td><%=sleep.timeEnd%></td>
+      <td><%=sleep.babyName%></td>
+      <td>
+
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          <form action='/sleep/<%= sleep.id %>?_method=DELETE' method="POST">
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
+          </form>
+          <a href="/sleep/<%= sleep.id %>/editSleep">
+            <button type="submit" class="btn btn-outline-warning">Edit</button>
+          </a>
+        </div>
+
+      </td>
+    </tr>
+    <%  }) %>
+
+
+  

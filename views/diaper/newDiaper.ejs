@@ -1,0 +1,63 @@
+<img src="/img/diaper1.jpg" class="img-fluid" alt="...">
+
+<div style="text-align: center;">
+  <img style="width: 700px;" class="img-fluid" src="/img/diaperlogo.jpg" alt="...">
+</div>
+<!-- <h1 style="margin: 0% 10% 0% 10% ;">Create New Diaper</h1> -->
+
+<form action="/diaper" method='POST'>
+  <div style="margin: 0% 10% 20% 10% ;">
+    <form class="row g-3 needs-validation" novalidate>
+
+            <div class="col-md-3">
+              <label for="date" class="form-label">Date</label>
+              <input name="date" type="date" class="form-control" id="date" required>
+              <div class="invalid-feedback">
+               Please select date.
+              </div>
+            </div>
+
+          <div class="col-md-4">
+            <label for="timeChange" class="form-label">Time Change</label>
+            <input name="timeChange" type="time" class="form-control" id="timeChange" required>
+            <div class="invalid-feedback">
+              Please select time.
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <label for="type" class="form-label">Type</label>
+            <select name="type" class="form-select" id="type" required>
+              <option selected disabled value="">Choose...</option>
+              <option>Wet</option>
+              <option>Solf</option>
+              <option>Firm</option>
+              <option>Solid</option>
+              <option>Hard</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select type.
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="details" class="form-label">Details</label>
+            <input name="details" type="text" class="form-control" id="details" value="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <label for="babyName" class="form-label">Baby Name</label>
+            <input name="babyName" type="text" class="form-control" id="babyName" value="" required>
+            <div class="valid-feedback">
+              Cute Baby!
+            </div>
+          </div>
+
+          <input type="submit" class="btn btn-outline-secondary" value="Create Diaper">
+
+    </form>
+  </div>
+</form>

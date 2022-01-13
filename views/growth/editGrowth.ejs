@@ -1,0 +1,48 @@
+<img src="/img/growth1.jpg" class="img-fluid" alt="...">
+<h1 style="margin: 0% 10% 0% 10% ;">Edit Growth</h1>
+
+<form action="/growth/<%= growth.id %>?_method=PUT" method='POST'>
+  <div style="margin: 0% 10% 20% 10% ;">
+    <form class="row g-3 needs-validation" novalidate>
+
+        <div class="col-md-3">
+            <label for="date" class="form-label">Date</label>
+            <input name="date" type="date" class="form-control" id="date" value="<%= growth.date %> " required>
+            <div class="invalid-feedback">
+                Please select date.
+            </div>
+        </div>
+    
+        <div class="col-md-4">
+            <label for="weight" class="form-label">Weight</label>
+            <input name="weight" type="number" class="form-control" id="weight" value="<%= growth.weight %> " required>
+            <div class="valid-feedback">
+                Please select weight.
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="hight" class="form-label">Hight</label>
+            <input name="hight" type="number" class="form-control" id="hight" value="<%= growth.hight %> " required>
+            <div class="valid-feedback">
+                Please select weight.
+            </div>
+        </div>
+
+
+        <div class="col-md-2">
+            <label for="babyName" class="form-label">Baby Name</label>
+            <input name="babyName" type="text" class="form-control" id="babyName" value="<%= growth.babyName %> " required>
+            <div class="valid-feedback">
+              Cute Baby!
+            </div>
+        </div>
+
+         
+            <input type="submit" class="btn btn-outline-secondary" value='Edit Growth'>
+        
+    </form>
+  </div>
+</form>
+
+

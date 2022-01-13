@@ -1,0 +1,52 @@
+<img src="/img/growth1.jpg" class="img-fluid" alt="...">
+<!-- <h1 style="margin: 0% 10% 0% 10% ;">Create New Growth</h1> -->
+
+<div style="text-align: center;">
+  <img style="width: 500px;" class="img-fluid" src="/img/growthlogo.jpg" alt="...">
+</div>
+
+<div style="margin: 2% 10% 20% 10% ;">
+    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group me-2" role="group" aria-label="First group">
+    
+            <a href="/growth/newgrowth">
+                <button type="button" class="btn btn-outline-secondary">Create New Growth</button>
+            </a>
+    
+        </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Hight</th>
+      <th scope="col">Baby</th>
+    </tr>
+  </thead>
+
+    <% growths.forEach((growth,id)=>{ %>
+  <tbody>
+    <tr>
+      <td><%=growth.date%></td>
+      <td><%=growth.weight%></td>
+      <td><%=growth.hight%></td>
+      <td><%=growth.babyName%></td>
+      <td>
+
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          <form action='/growth/<%= growth.id %>?_method=DELETE' method="POST">
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
+          </form>
+          <a href="/growth/<%= growth.id %>/editGrowth">
+            <button type="submit" class="btn btn-outline-warning">Edit</button>
+          </a>
+        </div>
+
+      </td>
+    </tr>
+    <%  }) %>
+
+
+  

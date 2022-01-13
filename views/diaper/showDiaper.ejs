@@ -1,0 +1,51 @@
+<img src="/img/diaper1.jpg" class="img-fluid" alt="...">
+
+<div style="text-align: center;">
+  <img style="width: 500px;" class="img-fluid" src="/img/diaperlogo.jpg" alt="...">
+</div>
+<!-- <h1 style="margin: 0% 10% 0% 10% ;">Create New Diaper</h1> -->
+
+<div style="margin: 2% 10% 20% 10% ;">
+    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group me-2" role="group" aria-label="First group">
+    
+            <a href="/diaper/newdiaper">
+                <button type="button" class="btn btn-outline-secondary">Create New Diaper</button>
+            </a>
+    
+        </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Time Change</th>
+      <th scope="col">Type</th>
+      <th scope="col">Details</th>
+      <th scope="col">Baby</th>
+    </tr>
+  </thead>
+
+    <% diapers.forEach((diaper,id)=>{ %>
+  <tbody>
+    <tr>
+      <td><%=diaper.date%></td>
+      <td><%=diaper.timeChange%></td>
+      <td><%=diaper.type%></td>
+      <td><%=diaper.details%></td>
+      <td><%=diaper.babyName%></td>
+      <td>
+
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          <form action='/diaper/<%= diaper.id %>?_method=DELETE' method="POST">
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
+          </form>
+          <a href="/diaper/<%= diaper.id %>/editDiaper">
+            <button type="submit" class="btn btn-outline-warning">Edit</button>
+          </a>
+        </div>
+
+      </td>
+    </tr>
+    <%  }) %>

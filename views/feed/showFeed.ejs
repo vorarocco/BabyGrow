@@ -1,0 +1,54 @@
+<img src="/img/feed1.jpg" class="img-fluid" alt="...">
+
+<div style="text-align: center;">
+  <img style="width: 500px;" class="img-fluid" src="/img/feedinglogo.jpg" alt="...">
+</div>
+
+<!-- <h1 style="margin: 0% 10% 0% 10% ;">Create New Feed</h1> -->
+
+<div style="margin: 2% 10% 20% 10% ;">
+    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group me-2" role="group" aria-label="First group">
+    
+            <a href="/feed/newfeed">
+                <button type="button" class="btn btn-outline-secondary">Create New Feed</button>
+            </a>
+
+        </div>
+</div>
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Food</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Time Start</th>
+      <th scope="col">Time End</th>
+      <th scope="col">Baby</th>
+    </tr>
+  </thead>
+
+    <% feeds.forEach((feed,id)=>{ %>
+  <tbody>
+    <tr>
+      <td><%=feed.date%></td>
+      <td><%=feed.food%></td>
+      <td><%=feed.amount%></td>
+      <td><%=feed.timeStart%></td>
+      <td><%=feed.timeEnd%></td>
+      <td><%=feed.babyName%></td>
+      <td>
+
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          <form action='/feed/<%= feed.id %>?_method=DELETE' method="POST">
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
+          </form>
+          <a href="/feed/<%= feed.id %>/editFeed">
+            <button type="submit" class="btn btn-outline-warning">Edit</button>
+          </a>
+        </div>
+
+      </td>
+    </tr>
+    <%  }) %>

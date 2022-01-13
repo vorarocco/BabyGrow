@@ -1,0 +1,51 @@
+<img style="width: 150%;" src="/img/profile.jpg" class="img-fluid" alt="...">
+
+<h1 style="margin: 0% 10% 0% 10% ;">Create New Baby Profile</h1>
+
+<form action="/babyprofile" method='POST'>
+    <div style="margin: 0% 10% 20% 10% ;">
+      <form class="row g-3 needs-validation" novalidate>
+  
+              <div class="col-md-3">
+                <label for="dateOfBirth" class="form-label">Date Of Birth</label>
+                <input name="dateOfBirth" type="date" class="form-control" id="dateOfBirth" required>
+                <div class="invalid-feedback">
+                 Please select date.
+                </div>
+              </div>
+  
+              <div class="col-md-4">
+                <label for="name" class="form-label">Name</label>
+                <input name="name" type="text" class="form-control" id="name" value="" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+
+            <div class="col-md-3">
+              <label for="gender" class="form-label">Gender</label>
+              <select name="gender" class="form-select" id="type" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Boy</option>
+                <option>Girl</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select gender.
+              </div>
+            </div>
+  
+            <!-- <div class="col-md-2">
+              <label for="parent" class="form-label">Parent</label>
+              <input name="parent" type="text" class="form-control" id="parent" value="" required>
+              <div class="valid-feedback">
+                Nice!
+              </div>
+            </div> -->
+            <div style="margin-top: 1%;">
+                <input type="submit" class="btn btn-outline-secondary" value="Create Baby Profile">
+            </div>
+       
+  
+       </form>
+    </div>
+</form>
