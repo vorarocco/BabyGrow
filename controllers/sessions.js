@@ -31,7 +31,7 @@ router.post('/register', async(req,res,next)=>{
                 req.session.username = createdUser.username
                 req.session.loggedIn = true
                 req.session.userId = createdUser._id
-                res.redirect('/home')
+                res.redirect('/')
             }
         }else{
             req.session.message = 'Password must match!'
@@ -56,7 +56,7 @@ router.post('/login', async (req,res, next)=>{
                 req.session.username = userToLogin.username
                 req.session.loggedIn = true
                 req.session.userId = userToLogin._id
-                res.redirect('/home')
+                res.redirect('/babyprofile')
             } else {
                 req.session.message = " Invalid username or password"
                 res.redirect('/session/login')

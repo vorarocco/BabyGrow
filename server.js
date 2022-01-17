@@ -84,8 +84,12 @@ app.get('/getSessionInfo', (req, res) => {
     res.send(req.session.data)
 })
 
-app.get('/home', (req, res)=>{
+app.get('/', (req, res)=>{
     res.render('home')
+})
+
+app.get('/about', (req, res)=>{
+    res.render('about')
 })
 
 app.listen (PORT,(req,res)=>{

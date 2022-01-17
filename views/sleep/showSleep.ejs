@@ -11,7 +11,7 @@
         <div class="btn-group me-2" role="group" aria-label="First group">
     
       
-            <a href="/sleep/newsleep">
+            <a href="/sleep/baby/<%= findBaby.id %>/newsleep">
                 <button type="button" class="btn btn-outline-secondary">Create New Sleep</button>
             </a>
             
@@ -38,10 +38,10 @@
       <td>
 
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-          <form action='/sleep/<%= sleep.id %>?_method=DELETE' method="POST">
+          <form action='/sleep/<%= findBaby.id %>/<%= sleep.id %>?_method=DELETE' method="POST">
             <button type="submit" class="btn btn-outline-danger">Delete</button>
           </form>
-          <a href="/sleep/<%= sleep.id %>/editSleep">
+          <a href="/sleep/baby/<%= findBaby.id %>/<%= sleep.id %>/editSleep">
             <button type="submit" class="btn btn-outline-warning">Edit</button>
           </a>
         </div>

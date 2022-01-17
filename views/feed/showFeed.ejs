@@ -10,7 +10,7 @@
     <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group me-2" role="group" aria-label="First group">
     
-            <a href="/feed/newfeed">
+            <a href="/feed/baby/<%= findBaby.id %>/newfeed">
                 <button type="button" class="btn btn-outline-secondary">Create New Feed</button>
             </a>
 
@@ -41,10 +41,10 @@
       <td>
 
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-          <form action='/feed/<%= feed.id %>?_method=DELETE' method="POST">
+          <form action='/feed/<%= findBaby.id %>/<%= feed.id %>?_method=DELETE' method="POST">
             <button type="submit" class="btn btn-outline-danger">Delete</button>
           </form>
-          <a href="/feed/<%= feed.id %>/editFeed">
+          <a href="/feed/baby/<%= findBaby.id %>/<%= feed.id %>/editFeed">
             <button type="submit" class="btn btn-outline-warning">Edit</button>
           </a>
         </div>

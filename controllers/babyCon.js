@@ -13,12 +13,13 @@ const authRequired = (req, res, next) => {
     }
 }
 
+
 // Baby
 router.get('/',authRequired, async (req,res)=>{
     console.log(req.session.userId)
     const findBaby = await Baby.find({parent: req.session.userId}).populate('parent')
     // Baby.find({parent: req.session.userId},(req,babys)=>{
-        console.log(findBaby)
+        // console.log(findBaby)
         res.render('babyProfile/showBaby',{findBaby})
     // })
 })
@@ -36,7 +37,6 @@ router.get('/newprofile',authRequired,(req,res,next) => {
 router.post('/' , async (req,res,next)=>{
     try{
         const currentUser = await User.findById(req.session.userId)
-
         const createBaby = ({
             dateOfBirth: req.body.dateOfBirth,
             gender: req.body.gender,
@@ -62,11 +62,6 @@ router.post('/' , async (req,res,next)=>{
     catch(err){
         next(err)
     }
-  
-    // Baby.create(createBaby, (err, createdBaby)=>{
-    //     console.log(createdBaby)
-    //     res.redirect('/babyprofile')
-    // })
 })
 
 // Edit

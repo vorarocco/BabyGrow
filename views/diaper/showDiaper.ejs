@@ -3,13 +3,14 @@
 <div style="text-align: center;">
   <img style="width: 500px;" class="img-fluid" src="/img/diaperlogo.jpg" alt="...">
 </div>
+
 <!-- <h1 style="margin: 0% 10% 0% 10% ;">Create New Diaper</h1> -->
 
 <div style="margin: 2% 10% 20% 10% ;">
     <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group me-2" role="group" aria-label="First group">
     
-            <a href="/diaper/newdiaper">
+            <a href="/diaper/baby/<%= findBaby.id %>/newdiaper">
                 <button type="button" class="btn btn-outline-secondary">Create New Diaper</button>
             </a>
     
@@ -38,10 +39,10 @@
       <td>
 
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-          <form action='/diaper/<%= diaper.id %>?_method=DELETE' method="POST">
+          <form action='/diaper/<%= findBaby.id %>/<%= diaper.id %>?_method=DELETE' method="POST">
             <button type="submit" class="btn btn-outline-danger">Delete</button>
           </form>
-          <a href="/diaper/<%= diaper.id %>/editDiaper">
+          <a href="/diaper/baby/<%= findBaby.id %>/<%= diaper.id %>/editDiaper">
             <button type="submit" class="btn btn-outline-warning">Edit</button>
           </a>
         </div>

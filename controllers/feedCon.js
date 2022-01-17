@@ -1,13 +1,15 @@
 const express= require('express')
 const router =express.Router()
 const Feed = require('../models/feed')
+const Baby = require('../models/baby')
+const User = require('../models/user')
+const req = require('express/lib/request')
+
 
 const authRequired = (req, res, next) => {
     if (req.session.loggedIn) {
-        // if the user is logged in, resolve the route
         next()
     } else {
-        // otherwise redirect them to the log in page
         res.redirect('/session/login')
     }
 }
@@ -15,45 +17,52 @@ const authRequired = (req, res, next) => {
 console.log(Feed)
 
 // Feed
-router.get('/',authRequired, (req,res)=>{
-    Feed.find({},(req,feeds)=>{
-        res.render('feed/showFeed',{feeds})
-    })
+router.get('/:id/feed',authRequired, async (req,res)=>{
+    const findBaby = await Baby.findById(req.params.id)
+    const feeds = await Feed.find({baby: req.params.id})
+    res.render('feed/showFeed',{feeds,findBaby})
 })
 
+// Nav Bar still not work
+// router.get('/', async(req,res)=>{
+//     const findBaby = await Baby.find({parent: req.session.userId}).populate('parent')
+//     console.log(findBaby)
+//     res.render('feed/showFeed',{findBaby,feeds:req.params})
+// })
+
 // new1-2
-router.get('/newfeed', (req,res)=>{
-    res.render('feed/newFeed')
+router.get('/baby/:id/newfeed', (req,res)=>{
+    Baby.findById(req.params.id,(err,baby)=>{
+        res.render('feed/newFeed',{baby})
+    })
 })
 
 // new2-2
-router.post('/', (req,res)=>{
+router.post('/baby/:id', (req,res)=>{
+    req.body.baby = req.params.id
     Feed.create(req.body, (err, createFeed)=>{
-      res.redirect('/feed')
-    })
-})
-
-// Edit
-router.put('/:id', (req,res)=>{
-    Feed.findByIdAndUpdate(req.params.id, req.body,{new:true}, (err,updateFeed)=>{
-        console.log(updateFeed)
-        res.redirect('/feed')
-    })
-})
-
-router.get('/:id/editFeed',(req,res)=>{
-    Feed.findById(req.params.id, (err, feed)=>{
-        res.render('feed/editFeed',{feed})
+      res.redirect(`/feed/${req.params.id}/feed`)
     })
 })
 
 // Delete
-router.delete('/:id',(req,res)=>{
-    Feed.findByIdAndRemove(req.params.id, (err,deleteFeed)=>{
-        res.redirect('/feed')
-    }) 
+router.delete('/:id/:feedId', async(req,res)=>{
+    const findBaby= await Baby.findById(req.params.id)
+    const feeds = await Feed.findByIdAndDelete(req.params.feedId)
+        res.redirect(`/feed/${findBaby._id}/feed`)
 })
 
+// Edit
+router.put('/:id/:feedId', async(req,res)=>{
+    const findBaby= await Baby.findById(req.params.id)
+    const feeds = await Feed.findByIdAndUpdate(req.params.feedId, req.body,{new:true})
+        res.redirect(`/feed/${findBaby._id}/feed`)
+})
 
+router.get('/baby/:id/:feedId/editFeed', async(req,res)=>{
+    const findBaby= await Baby.findById(req.params.id)
+    const feed = await Feed.findById(req.params.feedId)
+        res.render('feed/editFeed',{feed,findBaby})
+})
 
 module.exports = router
