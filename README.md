@@ -9,5 +9,5 @@ BabyGrowth allows users to track their baby’s daily activities including feedi
 When and how often youer baby is eating and sleeping is crucial information for your baby's doctor, but it can be difficult to keep track of 
 over all those sleepless nights. You have a lot to remember, let us help. 
 Watch your baby crawl, waddle, walk then run toward a bright and healthy future. 
-![pic](img/sleep.jpeg)
-![caption](img/page/home.mov)
+![pic](public/img/sleep.jpeg)
+![caption](public/img/page/home.mov)
