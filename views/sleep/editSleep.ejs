@@ -6,11 +6,11 @@
 
 <form action="/sleep/<%= findBaby.id %>/<%= sleep.id %>?_method=PUT" method='POST'>
   <div style="margin: 0% 10% 20% 10% ;">
-    <form class="row g-3 needs-validation" novalidate>
+    <form class="row justify-content-center" novalidate>
 
-          <div class="col-md-3">
+          <div class="col-md-4">
             <label for="date" class="form-label">Date</label>
-            <input name='date' type="date" class="form-control" id="date" value="<%= sleep.date %> ">
+            <input name='date' type="date" class="form-control" id="date" value="<%= sleep.date %>">
             <div class="invalid-feedback">
               Please select date.
             </div>
@@ -18,7 +18,7 @@
 
           <div class="col-md-4">
             <label for="timeStart" class="form-label">Time Start</label>
-            <input name="timeStart" type="time" class="form-control" id="timeStart" value="<%= sleep.timeStart %> ">
+            <input name="timeStart" type="time" class="form-control" id="timeStart" value="<%= sleep.timeStart %>">
             <div class="invalid-feedback">
               Please select start time.
             </div>
@@ -26,19 +26,19 @@
 
           <div class="col-md-4">
             <label for="timeEnd" class="form-label">Time End</label>
-            <input name="timeEnd" type="time" class="form-control" id="timeEnd" value="<%= sleep.timeEnd %> " required>
+            <input name="timeEnd" type="time" class="form-control" id="timeEnd" value="<%= sleep.timeEnd %>" required>
             <div class="invalid-feedback">
               Please select end time.
             </div>
           </div>
 
-          <!-- <div class="col-md-2">
-            <label for="babyName" class="form-label">Baby Name</label>
+          <div class="col-md-4">
+            <label for="babyName" class="form-label">Baby Mood</label>
             <input name="babyName" type="text" class="form-control" id="babyName" value="<%= sleep.babyName %> " required>
             <div class="valid-feedback">
               Cute Baby!
             </div>
-          </div> -->
+          </div>
 
           
             <input style="margin-top: 3%;" type="submit" class="btn btn-outline-secondary" value="Edit Sleep">
