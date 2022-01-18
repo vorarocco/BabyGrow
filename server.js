@@ -7,7 +7,8 @@ const app = express()
 // app.use(cors())
 
 
-const { PORT, SESSION_SECRET } = process.env
+const SESSION_SECRET = process.env.SESSION_SECRET
+const PORT = process.env.PORT || 8000
 const mongoose = require('mongoose')
 
 const methodOverride = require('method-override')
