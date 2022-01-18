@@ -1,4 +1,4 @@
-<img style="width: 150%;" src="/img/profile.jpg" class="img-fluid" alt="...">
+<!-- <img style="width: 150%;" src="/img/profile.jpg" class="img-fluid" alt="..."> -->
 
 <!-- <h1 style="margin: 0% 10% 0% 10% ;">Create New Baby Profile</h1> -->
 
@@ -6,20 +6,21 @@
     <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group me-2" role="group" aria-label="First group">
     
-            <a href="/babyprofile/newprofile">
-                <button type="button" class="btn btn-outline-secondary">Create New Baby Profile</button>
+            <a class="grow" href="/babyprofile/newprofile">
+              <img style="width: 80%;" src="/img/addbaby.jpg" class="img-fluid center" alt="...">
+                <!-- <button type="button" class="btn btn-outline-secondary">Create New Baby Profile</button> -->
             </a>
     
         </div>
 </div>
 
-<% findBaby.forEach((baby,id)=>{ %>
-  
-    <div style="display: inline-flex; justify-content: center;">
 
+
+  <div style="width: 100%;" class="center" >
       <div class="row row-cols-1 row-cols-md-2 g-4">
+        <% findBaby.forEach((baby,id)=>{ %>
         <div class="col">
-          <div class="card">
+          <div  class="card">
 
             <a href="/baby/<%= baby.id %>">
               <img src="/img/babyprofile1.jpg" class="card-img-top" alt="...">
@@ -30,7 +31,10 @@
               <p class="card-text">Gender: <%=baby.gender%></p>
               <p class="card-text">Birthday: <%=baby.dateOfBirth%></p>
       
-              <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <div class="btn-group center" role="group" aria-label="Basic mixed styles example">
+                <a href="/baby/<%= baby.id %>">
+                  <button type="submit" class="btn btn-outline-success">Add</button>
+                </a>
                 <form action='/babyprofile/<%= baby.id %>?_method=DELETE' method="POST">
                   <button type="submit" class="btn btn-outline-danger">Delete</button>
                 </form>
@@ -42,12 +46,13 @@
             </div>
           </div>
         </div>
+        <%  }) %>
       </div>
-    </div>
-  </a>
+  </div>
 
-<%  }) %>
 
+
+    
 
 
 

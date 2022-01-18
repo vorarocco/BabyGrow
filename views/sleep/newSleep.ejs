@@ -1,5 +1,7 @@
 <img src="/img/sleep1.jpg" class="img-fluid" alt="...">
-<h1 style="margin: 0% 10% 0% 10% ;">Create New Sleep</h1>
+<div style="text-align: center;">
+  <img style="width: 1000px;" class="img-fluid" src="/img/newsleep.jpg" alt="...">
+</div>
 
 <form action="/sleep/baby/<%= baby.id %>" method='POST'>
   <div style="margin: 0% 10% 20% 10% ;">
@@ -29,16 +31,16 @@
             </div>
           </div>
 
-          <div class="col-md-2">
+          <!-- <div class="col-md-2">
             <label for="babyName" class="form-label">Baby Name</label>
             <input name="babyName" type="text" class="form-control" id="babyName" value="" required>
             <div class="valid-feedback">
               Cute Baby!
             </div>
-          </div>
+          </div> -->
 
           
-            <input type="submit" class="btn btn-outline-secondary" value="Create Sleep">
+            <input style="margin-top: 3%;" type="submit" class="btn btn-outline-secondary" value="Create Sleep">
      
     </form>
   </div>

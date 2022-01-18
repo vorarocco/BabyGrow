@@ -1,5 +1,8 @@
 <img src="/img/growth1.jpg" class="img-fluid" alt="...">
-<h1 style="margin: 0% 10% 0% 10% ;">Create New Growth</h1>
+
+<div style="text-align: center;">
+    <img style="width: 1000px;" class="img-fluid" src="/img/newgrowth.jpg" alt="...">
+  </div>
 
 <form action="/growth/baby/<%=baby.id%>" method='POST'>
   <div style="margin: 0% 10% 20% 10% ;">
@@ -14,7 +17,7 @@
         </div>
     
         <div class="col-md-4">
-            <label for="weight" class="form-label">Weight</label>
+            <label for="weight" class="form-label">Weight / lb</label>
             <input name="weight" type="number" class="form-control" id="weight" value="" required>
             <div class="valid-feedback">
                 Please select weight.
@@ -22,7 +25,7 @@
         </div>
 
         <div class="col-md-4">
-            <label for="hight" class="form-label">Hight</label>
+            <label for="hight" class="form-label">Hight / Feet</label>
             <input name="hight" type="number" class="form-control" id="hight" value="" required>
             <div class="valid-feedback">
                 Please select weight.
@@ -30,16 +33,16 @@
         </div>
 
 
-        <div class="col-md-2">
+        <!-- <div class="col-md-2">
             <label for="babyName" class="form-label">Baby Name</label>
             <input name="babyName" type="text" class="form-control" id="babyName" value="" required>
             <div class="valid-feedback">
               Cute Baby!
             </div>
-        </div>
+        </div> -->
 
          
-            <input type="submit" class="btn btn-outline-secondary" value='Create Growth'>
+            <input style="margin-top: 3%;" type="submit" class="btn btn-outline-secondary" value='Create Growth'>
         
     </form>
   </div>

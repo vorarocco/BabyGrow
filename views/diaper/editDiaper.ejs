@@ -1,6 +1,8 @@
 <img src="/img/diaper1.jpg" class="img-fluid" alt="...">
 
-<h1 style="margin: 0% 10% 0% 10% ;">Edit Diaper</h1>
+<div style="text-align: center;">
+  <img style="width: 500px;" class="img-fluid" src="/img/editdiaperlogo.jpg" alt="...">
+</div>
 
 <form action="/diaper/<%= findBaby.id %>/<%= diaper.id %>?_method=PUT" method='POST'>
   <div style="margin: 0% 10% 20% 10% ;">
@@ -27,7 +29,7 @@
             <select name="type" class="form-select" id="type" value="<%= diaper.type %> " required>
               <option selected disabled value="">Choose...</option>
               <option>Wet</option>
-              <option>Solf</option>
+              <option>Soft</option>
               <option>Firm</option>
               <option>Solid</option>
               <option>Hard</option>
@@ -45,15 +47,15 @@
             </div>
           </div>
 
-          <div class="col-md-2">
+          <!-- <div class="col-md-2">
             <label for="babyName" class="form-label">Baby Name</label>
             <input name="babyName" type="text" class="form-control" id="babyName" value="<%= diaper.babyName %> " required>
             <div class="valid-feedback">
               Cute Baby!
             </div>
-          </div>
+          </div> -->
 
-          <input type="submit" class="btn btn-outline-secondary" value="Edit Diaper">
+          <input style="margin-top: 3%;" type="submit" class="btn btn-outline-secondary" value="Edit Diaper">
 
     </form>
   </div>

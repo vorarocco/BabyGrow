@@ -13,6 +13,9 @@
             <a href="/diaper/baby/<%= findBaby.id %>/newdiaper">
                 <button type="button" class="btn btn-outline-secondary">Create New Diaper</button>
             </a>
+            <a href="/baby/<%= findBaby.id %>">
+              <button type="button" class="btn btn-outline-secondary">Back</button>
+          </a>
     
         </div>
 </div>
@@ -24,7 +27,7 @@
       <th scope="col">Time Change</th>
       <th scope="col">Type</th>
       <th scope="col">Details</th>
-      <th scope="col">Baby</th>
+      <!-- <th scope="col">Baby</th> -->
     </tr>
   </thead>
 
@@ -35,7 +38,7 @@
       <td><%=diaper.timeChange%></td>
       <td><%=diaper.type%></td>
       <td><%=diaper.details%></td>
-      <td><%=diaper.babyName%></td>
+      <!-- <td><%=diaper.babyName%></td> -->
       <td>
 
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">

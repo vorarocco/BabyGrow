@@ -1,5 +1,7 @@
 <img src="/img/feed1.jpg" class="img-fluid" alt="...">
-<h1 style="margin: 0% 10% 0% 10% ;">Edit Feed</h1>
+<div style="text-align: center;">
+  <img style="width: 500px;" class="img-fluid" src="/img/editfeedlogo.jpg" alt="...">
+</div>
 
 
 <form action="/feed/<%= findBaby.id %>/<%= feed.id %>?_method=PUT" method='POST'>
@@ -68,16 +70,16 @@
             </div>
         </div>
 
-        <div class="col-md-2">
+        <!-- <div class="col-md-2">
             <label for="babyName" class="form-label">Baby Name</label>
             <input name="babyName" type="text" class="form-control" id="babyName" value="<%= feed.babyName %> " required>
             <div class="valid-feedback">
               Cute Baby!
             </div>
-        </div>
+        </div> -->
 
          
-            <input type="submit" class="btn btn-outline-secondary" value='Edit Feed'>
+            <input style="margin-top: 3%;" type="submit" class="btn btn-outline-secondary" value='Edit Feed'>
         
     </form>
   </div>

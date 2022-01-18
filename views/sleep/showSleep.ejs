@@ -14,6 +14,9 @@
             <a href="/sleep/baby/<%= findBaby.id %>/newsleep">
                 <button type="button" class="btn btn-outline-secondary">Create New Sleep</button>
             </a>
+            <a href="/baby/<%= findBaby.id %>">
+              <button type="button" class="btn btn-outline-secondary">Back</button>
+            </a>
             
         </div>
 </div>
@@ -24,7 +27,7 @@
       <th scope="col">Date</th>
       <th scope="col">Time Start</th>
       <th scope="col">Time End</th>
-      <th scope="col">Baby</th>
+      <!-- <th scope="col">Baby</th> -->
     </tr>
   </thead>
 
@@ -34,7 +37,7 @@
       <td><%=sleep.date%></td>
       <td><%=sleep.timeStart%></td>
       <td><%=sleep.timeEnd%></td>
-      <td><%=sleep.babyName%></td>
+      <!-- <td><%=sleep.babyName%></td> -->
       <td>
 
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
