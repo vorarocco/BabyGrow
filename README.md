@@ -48,24 +48,24 @@ Watch your baby crawl, waddle, walk then run toward a bright and healthy future.
 
 ### MVP / User Stories
 
-- [ ] As a user, I can register my information
-- [ ] As a user, I can log in when I want to use the app
-- [ ] As a user, I can create a profile for my baby 
-- [ ] As a user, I can saved my baby information and I can look at my baby information after I saved it
-- [ ] As a user, I can track feeding information
-- [ ] As a user, I can track sleeping information
-- [ ] As a user, I can be able to add the data information
-- [ ] As a user, I can be able to edit the data information if I make a mistake
-- [ ] As a user, I can be able to delete the data information if I make a mistake
+- [x] As a user, I can register my information
+- [x] As a user, I can log in when I want to use the app
+- [x] As a user, I can create a profile for my baby 
+- [x] As a user, I can saved my baby information and I can look at my baby information after I saved it
+- [x] As a user, I can track feeding information
+- [x] As a user, I can track sleeping information
+- [x] As a user, I can be able to add the data information
+- [x] As a user, I can be able to edit the data information if I make a mistake
+- [x] As a user, I can be able to delete the data information if I make a mistake
 
 ### Stretch Goals
 
 - [ ] As a user, I want to add my baby photo to my baby profile
-- [ ] As a user, I want to track multiple baby
+- [x] As a user, I want to track multiple baby
 - [ ] As a user, I want to add playlist lullabies for baby
 - [ ] As a user, I want to add photo for beautiful memories with baby
-- [ ] As a user, I want to track growth
-- [ ] As a user, I want to track diapers 
+- [x] As a user, I want to track growth
+- [x] As a user, I want to track diapers 
 
 ### Wireframes
 ![10afc480-6354-11ec-8094-2d7f64f5e0d5](https://user-images.githubusercontent.com/91036693/149876050-b1ac66c0-ba40-4475-a26a-f7bc0bea31d3.jpeg)
